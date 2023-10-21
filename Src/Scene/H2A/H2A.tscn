@@ -1,0 +1,46 @@
+[gd_scene load_steps=13 format=3 uid="uid://b0kg4wgh7gvcg"]
+
+[ext_resource type="PackedScene" uid="uid://bgd6j5asicyon" path="res://Src/Scene/Background.tscn" id="1_s4ps4"]
+[ext_resource type="Texture2D" uid="uid://efelw25i8jf3" path="res://Assets/H2A/roomsignBG.png" id="2_dyqn6"]
+[ext_resource type="Script" path="res://Src/Scene/H2A/H2A.cs" id="3_n26yd"]
+[ext_resource type="Script" path="res://Src/Objects/Teleporter.cs" id="3_tromp"]
+[ext_resource type="Script" path="res://Src/Scene/H2A/MiniGame/H2ABoard.cs" id="4_u38l5"]
+[ext_resource type="Texture2D" uid="uid://b1r5px2v1e1g4" path="res://Assets/H2A/CIRCLE.png" id="5_4ing4"]
+[ext_resource type="Resource" uid="uid://dbawnyry5ja6o" path="res://Src/Scene/H2A/MiniGame/Easy.tres" id="5_8ikvm"]
+[ext_resource type="Texture2D" uid="uid://betfgr2ltmx7g" path="res://Assets/H2A/CIRCLELINE.png" id="6_yib5h"]
+[ext_resource type="Script" path="res://Src/Objects/Interactable.cs" id="8_wp8mw"]
+[ext_resource type="Texture2D" uid="uid://bdix2xm3cchy1" path="res://Assets/H2A/gearbg.png" id="9_kfreg"]
+[ext_resource type="Texture2D" uid="uid://cyi6h3q3opkis" path="res://Assets/H2A/gear.png" id="10_iwc8v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ef0qm"]
+radius = 67.9117
+
+[node name="H2A" instance=ExtResource("1_s4ps4")]
+texture = ExtResource("2_dyqn6")
+script = ExtResource("3_n26yd")
+musicOverride = "res://Assets/Music/OpenRoad.mp3"
+
+[node name="ToH2" type="Area2D" parent="." index="0"]
+position = Vector2(-804, -434)
+script = ExtResource("3_tromp")
+targetPath = "res://Src/Scene/H2/H2.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToH2" index="0"]
+shape = SubResource("CircleShape2D_ef0qm")
+metadata/_edit_lock_ = true
+
+[node name="Board" type="Node2D" parent="." index="1"]
+position = Vector2(-36, 4)
+script = ExtResource("4_u38l5")
+SlotTexture = ExtResource("5_4ing4")
+LineTexture = ExtResource("6_yib5h")
+Radius = 350.0
+Config = ExtResource("5_8ikvm")
+
+[node name="Reset" type="Area2D" parent="." index="2"]
+position = Vector2(647, -333)
+script = ExtResource("8_wp8mw")
+texture = ExtResource("9_kfreg")
+
+[node name="Gear" type="Sprite2D" parent="Reset" index="2"]
+texture = ExtResource("10_iwc8v")

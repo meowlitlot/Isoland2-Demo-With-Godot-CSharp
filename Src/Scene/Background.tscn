@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgd6j5asicyon"]
+
+[ext_resource type="Texture2D" uid="uid://ck65b6fesi04l" path="res://Assets/H1/H1.png" id="1_wqfxn"]
+[ext_resource type="Script" path="res://Src/Scene/Background.cs" id="2_bsh1u"]
+
+[node name="Background" type="Sprite2D"]
+position = Vector2(960, 540)
+texture = ExtResource("1_wqfxn")
+script = ExtResource("2_bsh1u")
+metadata/_edit_lock_ = true

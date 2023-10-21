@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqvq1sbwxr20t"]
+
+[ext_resource type="Script" path="res://Src/Globals/SoundManager.cs" id="1_wg4mr"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_wg4mr")
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0

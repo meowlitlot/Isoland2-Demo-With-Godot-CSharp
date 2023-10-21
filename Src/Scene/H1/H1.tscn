@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmgd5mi1ybqwg"]
+
+[ext_resource type="PackedScene" uid="uid://bgd6j5asicyon" path="res://Src/Scene/Background.tscn" id="1_6apkb"]
+[ext_resource type="Script" path="res://Src/Objects/Teleporter.cs" id="2_wtqy5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6tdmo"]
+radius = 52.1536
+
+[node name="H1" instance=ExtResource("1_6apkb")]
+
+[node name="ToH2" type="Area2D" parent="." index="0"]
+position = Vector2(839, -155)
+script = ExtResource("2_wtqy5")
+targetPath = "res://Src/Scene/H2/H2.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToH2" index="0"]
+shape = SubResource("CircleShape2D_6tdmo")
+metadata/_edit_lock_ = true

@@ -1,0 +1,44 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Isoland 2 Csharp"
+run/main_scene="res://Src/UI/TitleScreen.tscn"
+config/features=PackedStringArray("4.1", "C#", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Game="*res://Src/Globals/Game.cs"
+SoundManager="*res://Src/Globals/SoundManager.tscn"
+SceneChanger="*res://Src/Globals/SceneChanger.tscn"
+Hud="*res://Src/Globals/HUD.tscn"
+ClickVisualizer="res://Src/Globals/ClickVisualizer.cs"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1536
+window/size/window_height_override=864
+window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="Isoland 2 Csharp"
+
+[input]
+
+interact={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(224, 13),"global_position":Vector2(228, 54),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}

@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk1cn8f1r7kfx"]
+
+[ext_resource type="Script" path="res://Src/UI/DialogBubble.cs" id="1_7l50u"]
+[ext_resource type="Texture2D" uid="uid://bvyc3nn71lapd" path="res://Assets/UI/对话框点9图.9.png" id="1_bv2qs"]
+[ext_resource type="Texture2D" uid="uid://cxgqvd2g7oxcq" path="res://Assets/UI/对话框把手.png" id="2_tsl63"]
+
+[sub_resource type="SystemFont" id="SystemFont_504tl"]
+font_names = PackedStringArray("OPlusSans 3.0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8evhw"]
+texture = ExtResource("1_bv2qs")
+texture_margin_left = 25.4459
+texture_margin_top = 28.5302
+texture_margin_right = 24.6748
+texture_margin_bottom = 26.988
+
+[node name="DialogBubble" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7l50u")
+
+[node name="Content" type="Label" parent="."]
+custom_minimum_size = Vector2(560, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = -135.0
+offset_right = 582.0
+offset_bottom = -22.0
+grow_vertical = 0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.2, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_504tl")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxTexture_8evhw")
+text = "垂死病中惊坐起，笑问客从何处来"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Handle" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -59.0
+offset_right = 61.0
+grow_vertical = 0
+texture = ExtResource("2_tsl63")
+flip_h = true
